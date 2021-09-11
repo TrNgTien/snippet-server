@@ -14,7 +14,7 @@ app.use(
     origin: [
       "http://localhost:3000",
       "https://code-snippet-client.herokuapp.com",
-      "https://code-snippet-manager.netlify.app/",
+      "https://code-snippet-manager.netlify.app",
     ],
     credentials: true,
   })
