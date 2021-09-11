@@ -9,7 +9,7 @@ dotenv.config();
 const snippetRoutes = require("./routers/snippetRouter");
 const userRoutes = require("./routers/userRouter");
 app.use(express.json());
-app.use(cors({ origin: "http://localhost:3000", credentials: true }));
+app.use(cors({ origin: ["http://localhost:3000", "https://code-snippet-client.herokuapp.com"], credentials: true }));
 app.use(cookieParser());
 
 const PORT = process.env.PORT || 5000;
