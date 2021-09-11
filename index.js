@@ -11,7 +11,9 @@ const userRoutes = require("./routers/userRouter");
 app.use(express.json());
 app.use(cors({ origin: "http://localhost:3000", credentials: true }));
 app.use(cookieParser());
-app.listen(5000, () => console.log("Welcome to the app snippet"));
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log("Welcome to the app snippet"));
 
 //Routers
 app.use("/auth", userRoutes);
