@@ -13,9 +13,9 @@ router.post("/", async (req, res) => {
         error: "Missing fields",
       });
     }
-    if (password.length > 6)
+    if (password.length >= 1 && password.length <= 8)
       return res.status(400).json({
-        error: "Password must be at least 6 characters long",
+        error: "Password must be at least 8 characters long",
       });
 
     if (password !== passwordVerify)
