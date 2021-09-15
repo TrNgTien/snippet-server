@@ -112,7 +112,6 @@ router.get("/loggedIn", (req, res) => {
       return res.json(null);
     } else {
       const validateUser = jwt.verify(token, process.env.JWT_SECRET);
-      console.log(validateUser);
       res.json(validateUser.id);
     }
   } catch (e) {
