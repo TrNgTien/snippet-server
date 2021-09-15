@@ -51,9 +51,10 @@ router.post("/", async (req, res) => {
           process.env.NODE_ENV === "development"
             ? "lax"
             : process.env.NODE_ENV === "production" && "none",
-        secure: (process.env.NODE_ENV === "development"
-          ? false
-          : (process.env.NODE_ENV === "production" && true)),
+        secure:
+          process.env.NODE_ENV === "development"
+            ? false
+            : process.env.NODE_ENV === "production" && true,
       })
       .send();
   } catch (e) {
@@ -95,9 +96,10 @@ router.post("/login", async (req, res) => {
           process.env.NODE_ENV === "development"
             ? "lax"
             : process.env.NODE_ENV === "production" && "none",
-        secure: (process.env.NODE_ENV === "development"
-          ? false
-          : (process.env.NODE_ENV === "production" && true)),
+        secure:
+          process.env.NODE_ENV === "development"
+            ? false
+            : process.env.NODE_ENV === "production" && true,
       })
       .send();
   } catch (e) {
@@ -128,9 +130,10 @@ router.get("/logOut", (req, res) => {
           process.env.NODE_ENV === "development"
             ? "lax"
             : process.env.NODE_ENV === "production" && "none",
-        secure: (process.env.NODE_ENV === "development"
-          ? false
-          : (process.env.NODE_ENV === "production" && true)),
+        secure:
+          process.env.NODE_ENV === "development"
+            ? false
+            : process.env.NODE_ENV === "production" && true,
         expires: new Date(0),
       })
       .send();
