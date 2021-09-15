@@ -53,7 +53,7 @@ router.put("/:id", auth, async (req, res) => {
             "No snippet with this id was found . Please contact the devloper.",
         });
 
-      if (originalSnippet.user.toString() !== req.user.id)
+      if (originalSnippet.user.toString() !== req.user)
         return res.status(401).json({ error: "Unauthorized" });
 
       originalSnippet.title = title;
@@ -70,7 +70,6 @@ router.put("/:id", auth, async (req, res) => {
 router.delete("/:id", auth, async (req, res) => {
   try {
     const snippetId = req.params.id;
-
     // validation
     if (!snippetId) {
       return res.status(400).json({
@@ -84,7 +83,7 @@ router.delete("/:id", auth, async (req, res) => {
             "No snippet with this id was found . Please contact the devloper.",
         });
 
-      if (existingSnippet.user.toString() !== req.user.id)
+      if (existingSnippet.user.toString() !== req.user)
         return res.status(401).json({ error: "Unauthorized" });
       else await existingSnippet.delete();
       res.json(existingSnippet);
